@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN 02</title>
+    <style>
+        body {
+            background-color: rgba(139, 238, 205, 0.356);
+        }
+
+        .centered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            width: 270px;
+            height: 330px;
+            border-radius: 30px;
+            background: #e0e0e0;
+            box-shadow: 15px 15px 30px #bebebe,
+                        -15px -15px 30px #ffffff;
+        }
+
+        /* START INPUTS */
+        .form__group {
+            position: relative;
+            padding: 20px 0 0;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 180px;
+        }
+
+        .form__field {
+            font-family: inherit;
+            width: 100%;
+            border: none;
+            border-bottom: 2px solid #9b9b9b;
+            outline: 0;
+            font-size: 17px;
+            color: black;
+            padding: 7px 0;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+
+        .form__field::placeholder {
+            color: transparent;
+        }
+
+        .form__field:placeholder-shown ~ .form__label {
+            font-size: 17px;
+            cursor: text;
+            top: 20px;
+        }
+
+        .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #9b9b9b;
+            pointer-events: none;
+        }
+
+        .form__field:focus {
+            padding-bottom: 6px;
+            font-weight: 700;
+            border-width: 3px;
+            border-image: linear-gradient(to right, #116399, #38caef);
+            border-image-slice: 1;
+        }
+
+        .form__field:focus ~ .form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 17px;
+            color: #38caef;
+            font-weight: 700;
+        }
+
+        /* reset input */
+        .form__field:required, .form__field:invalid {
+            box-shadow: none;
+        }
+        /* END INPUTS */
+
+        /* START BUTTON */
+        button {
+            width: 7em;
+            position: relative;
+            height: 2.5em;
+            border: 3px ridge #149CEA;
+            outline: none;
+            background-color: transparent;
+            color: black;
+            transition: 1s;
+            border-radius: 0.3em;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        button::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 3%;
+            width: 95%;
+            height: 40%;
+            background-color: #e0e0e0;
+            transition: 0.5s;
+            transform-origin: center;
+        }
+
+        button::before {
+            content: "";
+            transform-origin: center;
+            position: absolute;
+            top: 80%;
+            left: 3%;
+            width: 95%;
+            height: 40%;
+            background-color: #e0e0e0;
+            transition: 0.5s;
+        }
+
+        button:hover::before, button:hover::after {
+            transform: scale(0)
+        }
+
+        button:hover {
+            cursor: pointer;
+            box-shadow: inset 0px 0px 25px #1479EA;
+        }
+        /* END BUTTON */
+    </style>
+</head>
+<body>
+    <div class="centered">
+        <div class="card">
+            <div class="center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill="currentColor" d="M4 15h2v5h12V4H6v5H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6zm6-4V8l5 4-5 4v-3H2v-2h8z"></path>
+                </svg>
+                <h1 class="form_heading">Sign in</h1>
+            </div>
+            <div class="center">
+                <div class="form__group field">
+                    <input required="" placeholder="Email" class="form__field" type="email">
+                    <label class="form__label" for="Email">Email</label>
+                </div>
+            </div>
+            <div class="center">
+                <div class="form__group field">
+                    <input required="" placeholder="Password" class="form__field" type="password">
+                    <label class="form__label" for="Password">Password</label>
+                </div>
+            </div>
+            <div class="center" style="margin-top: 30px;">
+                <button>Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
